@@ -42,4 +42,9 @@ def checkout(cart, coupons)
 end
 
 apply_coupons(
+  [
+  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 3},
+  {:item => "KALE",    :price => 3.00, :clearance => false, :count => 1}
+  ],
+  
   )

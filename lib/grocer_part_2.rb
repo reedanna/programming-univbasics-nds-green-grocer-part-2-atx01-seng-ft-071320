@@ -5,10 +5,7 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   consolidate_cart(cart)
-  new_cart = []
-  
-  cart.each do |grocery|
-    new_cart.push(grocery)
+  cart.each do |grocery| 
     current_item = find_item_by_name_in_collection(grocery[:item], coupons)
     if current_item
       coupons.each do |coupon|
@@ -19,13 +16,13 @@ def apply_coupons(cart, coupons)
             :clearance => grocery[:clearance],
             :count => coupon[:num]
           }
-          new_cart.push("hello world")
+          cart.push("hello world")
           grocery[:count] -= coupon[:num]
         end
       end
     end
   end
-  p new_cart
+  p cart
 end
 
 def apply_clearance(cart)

@@ -7,13 +7,14 @@ def apply_coupons(cart, coupons)
   cart.each |grocery| do
     current_item = find_item_by_name_in_collection(grocery[:item], coupons)
     if current_item
-      coupon_index = 0
       coupons.each |coupon| do
-        
+        if grocery[:item] == coupon[:item] && grocery[:count] > coupon[:num]
+          cart.push(coupon)
+          grocery[:count] -= coupon[:num]
       end
-      cart.push()
     end
   end
+  cart
 end
 
 def apply_clearance(cart)

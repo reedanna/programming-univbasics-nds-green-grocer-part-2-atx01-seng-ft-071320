@@ -5,6 +5,7 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   cart.each do |grocery| 
+    
     current_item = find_item_by_name_in_collection(grocery[:item], coupons)
     if current_item
       coupons.each do |coupon|

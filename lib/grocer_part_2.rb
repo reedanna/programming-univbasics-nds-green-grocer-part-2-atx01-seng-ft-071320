@@ -18,7 +18,6 @@ def apply_coupons(cart, coupons)
           })
           grocery[:count] -= coupon[:num]
         end
-        cart.push("hello")
       end
     end
   end

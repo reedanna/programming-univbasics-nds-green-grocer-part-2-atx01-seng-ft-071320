@@ -20,13 +20,19 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  p cart
+  return cart
 end
 
 def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  cart.each do |grocery|
+    if grocery[:clearance] == TRUE
+      grocery[:price] = (grocery[:price] * 0.8).round(2)
+    end
+  end
+  return cart
 end
 
 def checkout(cart, coupons)
@@ -40,14 +46,3 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
 end
-
-apply_coupons(
- [
-  {:item => "AVOCADO", :price => 3.00, :clearance => true, :count => 2},
-],
-  [
-      {:item => "AVOCADO", :num => 2, :cost => 5.00},
-      {:item => "BEER", :num => 2, :cost => 20.00},
-      {:item => "CHEESE", :num => 3, :cost => 15.00}
-  ]
-  )

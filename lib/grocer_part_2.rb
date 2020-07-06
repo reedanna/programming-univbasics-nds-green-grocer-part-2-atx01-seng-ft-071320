@@ -9,12 +9,13 @@ def apply_coupons(cart, coupons)
     if current_item
       coupons.each do |coupon|
         if grocery[:item] == coupon[:item] && grocery[:count] > coupon[:num]
-          cart.push({
+          item_name_with_coupon = {
             :item => "#{grocery[:item]} W/COUPON",
             :price => coupon[:cost]/coupon[:num],
             :clearance => grocery[:clearance],
             :count => coupon[:num]
-          })
+          }
+          cart.push(item_name_with_coupon)
           grocery[:count] -= coupon[:num]
         end
       end

@@ -16,7 +16,7 @@ def apply_coupons(cart, coupons)
             :clearance => grocery[:clearance],
             :count => coupon[:num]
           })
-          grocery[:count] = grocery[:count] - coupon[:num]
+          grocery[:count] = 0
         end
       end
     end

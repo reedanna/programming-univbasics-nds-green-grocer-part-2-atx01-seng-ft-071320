@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
         end
       end
     end
+    cart.push("hello")
   end
   p cart
 end

@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
       end
     end
   end
-  return cart
+  p cart
 end
 
 def apply_clearance(cart)

@@ -8,7 +8,9 @@ def apply_coupons(cart, coupons)
     current_item = find_item_by_name_in_collection(grocery[:item], coupons)
     if current_item
       coupon_index = 0
-      
+      coupons.each |coupon| do
+        
+      end
       cart.push()
     end
   end

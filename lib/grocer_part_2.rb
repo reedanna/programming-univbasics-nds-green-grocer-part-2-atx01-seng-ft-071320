@@ -4,10 +4,10 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-  cart.each |grocery| do
+  cart.each do |grocery| 
     current_item = find_item_by_name_in_collection(grocery[:item], coupons)
     if current_item
-      coupons.each |coupon| do
+      coupons.each do |coupon|
         if grocery[:item] == coupon[:item] && grocery[:count] > coupon[:num]
           cart.push({
             :item => "#{grocery[:item]} W/COUPON",

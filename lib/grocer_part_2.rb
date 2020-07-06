@@ -16,7 +16,6 @@ def apply_coupons(cart, coupons)
             :clearance => grocery[:clearance],
             :count => coupon[:num]
           })
-
         end
       end
     end
